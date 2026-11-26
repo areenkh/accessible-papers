@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paperlight</title>
+<link rel="stylesheet" href="styles.css">
+<script src="sample-pdf.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="shell mast"><div class="brand">Paper<span>light</span></div></div></header>
+<div class="shell">
+<nav aria-label="Workspace" id="nav"></nav>
+<main id="main" tabindex="-1"></main>
+</div>
+<div id="notice" class="sr" role="status"></div>
+<dialog id="reset" aria-labelledby="new-review-title" aria-describedby="new-review-detail">
+  <form method="dialog">
+    <h2 id="new-review-title">Restart sample</h2>
+    <p><strong>Example paper</strong><br>Urban Shade and Neighborhood Cooling</p>
+    <p id="new-review-detail">This restarts the review of the same paper and clears its saved decisions and reminders in this browser.</p>
+    <div class="actions">
+      <button value="cancel" autofocus>Keep current review</button>
+      <button value="reset" class="primary">Restart review</button>
+    </div>
+  </form>
+</dialog>
+</body>
+</html>
