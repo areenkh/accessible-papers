@@ -497,11 +497,12 @@ function show(next, focus = true, editing = false) {
   else if (page.endsWith('-description')) main.innerHTML = descriptionEditor(page);
   else if (page === 'overview') main.innerHTML = overview();
   else if (page === 'export') main.innerHTML = exportView();
-  else main.innerHTML = `${heading('Prepare a reading version', 'Review a research paper’s figure description, section hierarchy, and table labels before sharing.', 'Manuscript accessibility')}
-    <section class="hero card"><div><p class="eyebrow">Fictional sample</p><h2>Urban shade study</h2>
+  else main.innerHTML = `${heading('Add your paper', 'Create a draft reading version and review it before sharing.', 'Manuscript accessibility')}
+    <section class="hero card"><div><p class="eyebrow">Sample paper selected</p><h2>Urban shade study.pdf</h2>
     <p>Compare how trees and shade sails cool residential, commercial, and industrial neighborhoods.</p>
-    <p>This prototype uses a built-in structured manuscript and prewritten suggestions. Review decisions are saved in this browser when local storage is available.</p>
-    ${button('start', 'Create draft reading version', true)}</div>
+    <p>This prototype simulates paper selection using the built-in sample.</p>
+    <div class="actions"><button type="button" disabled>Choose another PDF</button>
+    ${button('start', 'Create draft reading version', true)}</div></div>
     <div class="hero-art" aria-hidden="true"><div class="sheet">
       <div class="sheet-lines"><i></i><i></i><i></i></div>
       <div class="sheet-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
@@ -677,9 +678,8 @@ main.addEventListener('submit', event => {
 reset.addEventListener('close', () => {
   if (reset.returnValue !== 'reset') return;
   state = initialState();
-  state.started = true;
-  save('Fresh review started for Urban Shade and Neighborhood Cooling. Four reviews are available.');
-  show('overview');
+  save('Sample review reset. The sample paper is ready to open.');
+  show('start');
 });
 
 show(page, false);
